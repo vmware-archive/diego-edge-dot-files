@@ -12,6 +12,8 @@ source $BASH_IT/bash_it.sh
 export PATH=$PATH:~/workspace/go/bin
 export GOPATH=~/workspace/diego-release
 
+export PULL_DOCKER_IMAGE=false #do not pull docker images when using diego-lite pipeline run_with_docker helper
+
 alias cd-whetstone="cd $GOPATH/src/github.com/pivotal-cf-experimental/whetstone"
 alias cd-diego-lite="cd /Users/pivotal/workspace/diego-lite"
 alias cd-cli="cd $GOPATH/src/github.com/pivotal-cf-experimental/diego-edge-cli"
