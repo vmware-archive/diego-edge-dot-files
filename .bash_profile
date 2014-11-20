@@ -26,3 +26,8 @@ $(boot2docker shellinit)
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 [ -f ~/.bashrc ] && source ~/.bashrc
+
+if [ -f ~/.diego_edge_env_vars ]; then
+   echo "Found ~/.diego_edge_env_vars file. Sourcing it."
+   source ~/.diego_edge_env_vars
+fi
