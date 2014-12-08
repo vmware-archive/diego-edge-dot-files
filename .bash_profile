@@ -15,7 +15,7 @@ export GOPATH=~/workspace/diego-release
 export PULL_DOCKER_IMAGE=false #do not pull docker images when using diego-lite pipeline run_with_docker helper
 
 alias cd-whetstone="cd $GOPATH/src/github.com/pivotal-cf-experimental/whetstone"
-alias cd-diego-lite="cd /Users/pivotal/workspace/diego-lite"
+alias cd-diego-edge="cd /Users/pivotal/workspace/diego-edge"
 alias cd-gopath="cd $GOPATH"
 alias cd-cli="cd $GOPATH/src/github.com/pivotal-cf-experimental/diego-edge-cli"
 alias reset-dns="sudo killall -HUP mDNSResponder"
@@ -27,7 +27,3 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 [ -f ~/.bashrc ] && source ~/.bashrc
 
-if [ -f ~/.diego_edge_env_vars ]; then
-   echo "Found ~/.diego_edge_env_vars file. Sourcing it."
-   source ~/.diego_edge_env_vars
-fi
