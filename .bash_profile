@@ -1,4 +1,5 @@
 export PATH="/usr/local/bin:$PATH"
+export PATH=$PATH:~/workspace/diego-release/bin
 
 # Path to the bash it configuration
 export BASH_IT="/Users/pivotal/.bash_it"
@@ -16,6 +17,7 @@ export PULL_DOCKER_IMAGE=false #do not pull docker images when using diego-lite 
 
 alias cd-whetstone="cd $GOPATH/src/github.com/pivotal-cf-experimental/whetstone"
 alias cd-diego-edge="cd /Users/pivotal/workspace/diego-edge"
+alias cd-lattice="cd ~/workspace/lattice"
 alias cd-gopath="cd $GOPATH"
 alias cd-cli="cd $GOPATH/src/github.com/pivotal-cf-experimental/lattice-cli"
 alias reset-dns="sudo killall -HUP mDNSResponder"
