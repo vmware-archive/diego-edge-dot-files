@@ -16,7 +16,6 @@ export GOPATH=~/workspace/diego-release
 export PULL_DOCKER_IMAGE=false #do not pull docker images when using diego-lite pipeline run_with_docker helper
 
 alias cd-whetstone="cd $GOPATH/src/github.com/pivotal-cf-experimental/whetstone"
-alias cd-diego-edge="cd /Users/pivotal/workspace/diego-edge"
 alias cd-lattice="cd ~/workspace/lattice"
 alias cd-gopath="cd $GOPATH"
 alias cd-cli="cd $GOPATH/src/github.com/pivotal-cf-experimental/lattice-cli"
