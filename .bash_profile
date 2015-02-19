@@ -16,10 +16,9 @@ export GOPATH=~/workspace/diego-release
 export PULL_DOCKER_IMAGE=false #do not pull docker images when using diego-lite pipeline run_with_docker helper
 export DOCKER_IMAGE=cloudfoundry/lattice-pipeline
 
-alias cd-whetstone="cd $GOPATH/src/github.com/pivotal-cf-experimental/whetstone"
-alias cd-lattice="cd ~/workspace/lattice"
+alias cd-lattice="cd $GOPATH/src/github.com/cloudfoundry-incubator/lattice"
 alias cd-gopath="cd $GOPATH"
-alias cd-cli="cd $GOPATH/src/github.com/pivotal-cf-experimental/lattice-cli/ltc"
+alias cd-cli="cd $GOPATH/src/github.com/cloudfoundry-incubator/lattice/cli/ltc"
 alias reset-dns="sudo killall -HUP mDNSResponder"
 alias empty-etcd="curl -L http://192.168.11.11:4001/v2/keys/v1/desired/?recursive=true -XDELETE"
 alias reload-dnsmasq="sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq"
