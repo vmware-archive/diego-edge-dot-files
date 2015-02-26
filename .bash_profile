@@ -19,11 +19,12 @@ export DOCKER_IMAGE=cloudfoundry/lattice-pipeline
 alias cd-lattice="cd $GOPATH/src/github.com/cloudfoundry-incubator/lattice"
 alias cd-gopath="cd $GOPATH"
 alias cd-cli="cd $GOPATH/src/github.com/cloudfoundry-incubator/lattice/ltc"
+alias cd-ltc="cd-cli"
 alias reset-dns="sudo killall -HUP mDNSResponder"
 alias empty-etcd="curl -L http://192.168.11.11:4001/v2/keys/v1/desired/?recursive=true -XDELETE"
 alias reload-dnsmasq="sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq"
-alias recompile-lattice="cd ~/workspace && $GOPATH/src/github.com/cloudfoundry-incubator/lattice/lattice-pipeline/helpers/run_with_docker /workspace/diego-release/src/github.com/cloudfoundry-incubator/lattice/lattice-pipeline/01_compilation/compile_to_tar && mv -v ./lattice.tgz $GOPATH/src/github.com/cloudfoundry-incubator/lattice/ && cd-lattice"
-alias remake-vagrant="cd-lattice; vagrant destroy --force; recompile-lattice && VAGRANT_LATTICE_TAR_PATH=/vagrant/lattice.tgz vagrant up --provider=virtualbox; get-ginkgo; go install github.com/cloudfoundry-incubator/lattice/cli/ltc"
+alias recompile-lattice="cd ~/workspace && $GOPATH/src/github.com/cloudfoundry-incubator/lattice/lattice-pipeline/helpers/run_with_docker /workspace/diego-release/src/github.com/cloudfoundry-incubator/lattice/lattice-pipeline/01_compilation/compile_lattice_tar && mv -v ./lattice.tgz $GOPATH/src/github.com/cloudfoundry-incubator/lattice/ && cd-lattice"
+alias remake-vagrant="cd-lattice; vagrant destroy --force; recompile-lattice && VAGRANT_LATTICE_TAR_PATH=/vagrant/lattice.tgz vagrant up --provider=virtualbox; get-ginkgo; go install github.com/cloudfoundry-incubator/lattice/ltc"
 alias get-ginkgo="go get github.com/onsi/ginkgo/ginkgo && go get github.com/onsi/gomega"
 $(boot2docker shellinit)
 ~/workspace/bosh-lite/bin/add-route
