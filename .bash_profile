@@ -22,9 +22,12 @@ alias cd-cli="cd $GOPATH/src/github.com/cloudfoundry-incubator/lattice/ltc"
 alias cd-ltc="cd-cli"
 alias reset-dns="sudo killall -HUP mDNSResponder"
 alias empty-etcd="curl -L http://192.168.11.11:4001/v2/keys/v1/desired/?recursive=true -XDELETE"
+alias empty-etcd-tasks="curl -L http://192.168.11.11:4001/v2/keys/v1/task/?recursive=true -XDELETE"
 alias reload-dnsmasq="sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq"
+alias install-ltc="pushd $GOPATH/src/github.com/cloudfoundry-incubator/lattice/ltc && go install && popd"
 alias recompile-lattice="cd ~/workspace && $GOPATH/src/github.com/cloudfoundry-incubator/lattice/pipeline/helpers/run_with_docker /workspace/diego-release/src/github.com/cloudfoundry-incubator/lattice/pipeline/01_compilation/compile_lattice_tar && mv -v ./lattice.tgz $GOPATH/src/github.com/cloudfoundry-incubator/lattice/ && cd-lattice"
 alias remake-vagrant="cd-lattice; vagrant destroy --force; recompile-lattice && VAGRANT_LATTICE_TAR_PATH=/vagrant/lattice.tgz vagrant up --provider=virtualbox; get-ginkgo; go install github.com/cloudfoundry-incubator/lattice/ltc"
+alias remake-condenser="cd-lattice; vagrant destroy --force; recompile-lattice && CONDENSER_ON=1 VAGRANT_LATTICE_TAR_PATH=/vagrant/lattice.tgz vagrant up --provider=virtualbox; get-ginkgo; go install github.com/cloudfoundry-incubator/lattice/ltc"
 alias get-ginkgo="go get github.com/onsi/ginkgo/ginkgo && go get github.com/onsi/gomega"
 $(boot2docker shellinit)
 ~/workspace/bosh-lite/bin/add-route
